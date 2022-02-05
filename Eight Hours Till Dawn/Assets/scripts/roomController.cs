@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+// in order to use the text data type you must import UnityEngine.UI
 using UnityEngine.UI;
 
 public class roomController : MonoBehaviour
@@ -14,7 +16,7 @@ public class roomController : MonoBehaviour
     {
     // create the room array where we will store every room name, its position, and its neighbors
     // y0 : name | y1 : x position of room | y2 : y position of room | y3 : bombs
-    int[,] roomDataArray = new int[16, 3];
+    int[,] roomDataArray = new int[16, 4];
 
         // loop through the x position of the array, filling each room name with it's corisponding #
         for (var i = 0; i < roomDataArray.GetLength(0); i++)
@@ -28,11 +30,12 @@ public class roomController : MonoBehaviour
         // Room 16
         roomDataArray[0, 1] = -10; // X position
         roomDataArray[0, 2] = -5; // Y position
-
+        //roomDataArray[0, 3] = new int[1, 15]; // neighbors
          
         // room 1
         roomDataArray[1, 1] = -10; // X position
         roomDataArray[1, 2] = -1; // Y position
+        //roomDataArray[1, 3] = 
 
         // room 2
         roomDataArray[2, 1] = -0; // X position
