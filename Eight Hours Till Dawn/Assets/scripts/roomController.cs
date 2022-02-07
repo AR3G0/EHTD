@@ -11,13 +11,16 @@ public class roomController : MonoBehaviour
     public Text roomName;
     public Transform parent;
 
+    // create the room array where we will store every room name, its position, and its neighbors
+    // y0 : name | y1 : x position of room | y2 : y position of room | y3 : bombs
+    public int[,] roomDataArray = new int[16, 4];
+
+    // create a new 2d array to store the information of which rooms are neighbors
+    public int[,] roomNeighborArray = new int[17, 5];
+
     // Start is called before the first frame update
     void Start()
     {
-        // create the room array where we will store every room name, its position, and its neighbors
-        // y0 : name | y1 : x position of room | y2 : y position of room | y3 : bombs
-        int[,] roomDataArray = new int[16, 4];
-
 
         // loop through the x position of the array, filling each room name with it's corisponding #
         for (var i = 0; i < roomDataArray.GetLength(0); i++)
@@ -89,9 +92,6 @@ public class roomController : MonoBehaviour
 
         #endregion // room positions
 
-
-        // create a new 2d array to store the information of which rooms are neighbors
-        int[,] roomNeighborArray = new int[17, 5];
 
         // initalize the room neighbor array | store the room # for each room's neighbor
         #region        
