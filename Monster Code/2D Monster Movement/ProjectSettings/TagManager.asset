@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Hider
+  - GameHandler
+  - tree
   layers:
   - Default
   - TransparentFX

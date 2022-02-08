@@ -15,7 +15,7 @@ public class hinderMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
 
         if (timer <= 0)

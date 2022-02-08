@@ -8,11 +8,17 @@ public class GameHandler : MonoBehaviour
 
     public GameObject scoreText;
     private int playerScore = 0;
-    public GameObject gameOverText;
+    public GameObject gameOverTextB;
+    public GameObject gameOverTextF;
+    public GameObject winTextB;
+    public GameObject winTextF;
 
     void Start()
     {
-        gameOverText.SetActive(false);
+        gameOverTextF.SetActive(false);
+        gameOverTextB.SetActive(false);
+        winTextF.SetActive(false);
+        winTextB.SetActive(false);
         UpdateScore();
     }
 
@@ -27,6 +33,11 @@ public class GameHandler : MonoBehaviour
         Text scoreTextB = scoreText.GetComponent<Text>();
 
         scoreTextB.text = "Score: " + playerScore;
-        gameOverText.SetActive(true);
+        if(playerScore >= 5)
+        {
+            scoreTextB.text = "Score: 5";
+            winTextF.SetActive(true);
+            winTextB.SetActive(true);
+        }
     }
 }
